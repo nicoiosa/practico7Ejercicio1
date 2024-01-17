@@ -1,0 +1,32 @@
+body {
+  background: rgb(71, 42, 200);
+  background: linear-gradient(
+    87deg,
+    rgba(71, 42, 200, 1) 20%,
+    rgba(48, 129, 207, 1) 67%
+  );
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.myMain {
+  flex-grow: 1;
+}
+.btn {
+  background-color: #a830cf;
+  border: #a830cf;
+}
+.btn:hover {
+  background-color: #711f8b;
+  border: #711f8b;
+}
+.btn:active {
+  background-color: #711f8b;
+  border: #711f8b;
+}
+.btn:focus {
+  background-color: #711f8b;
+  border: #711f8b;
+}
