@@ -1,5 +1,5 @@
 import { ListGroup } from "react-bootstrap";
-import ItemTask from "./itemTask";
+import ItemTask from "./ItemTask";
 
 const ListTask = ({ taskArray, dltTask }) => {
   return (
