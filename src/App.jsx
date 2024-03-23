@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Container className="my-4 text-light myMain">
-        <h1 className="mb-3 display-3 text-center">Bienvenido</h1>
+        <h1 className="mb-3 display-3 text-center">Bienvenido a Rolling Task List</h1>
         <p className="lead text-center">Ingresa tus tareas</p>
         <TaskForm />
       </Container>
