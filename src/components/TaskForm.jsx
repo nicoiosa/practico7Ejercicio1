@@ -28,7 +28,7 @@ const TaskForm = (edit) => {
               required: "No escribiste la tarea todavia!",
               minLength: {
                 value: 2,
-                message: "Debe tener por lo menos 20 caracteres",
+                message: "Debe tener por lo menos 2 caracteres",
               },
               maxLength: {
                 value: 100,
