@@ -1,24 +1,24 @@
 import { Alert, ListGroup } from "react-bootstrap";
 import ItemTask from "./ItemTask";
 import { useEffect, useState } from "react";
-import { readTaskAPI } from "../helpers/queries";
+import { readTasksAPI } from "../helpers/queries";
 
-const ListTask = ({}) => {
+const ListTask = ({reload}) => {
   const [tasks, setTasks] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
     obtainTasks();
-  }, []);
+  }, [reload]);
   const obtainTasks = async () => {
     try {
-      const answer = await readTaskAPI();
+      const answer = await readTasksAPI();
       if (answer.status === 200) {
         const data = await answer.json();
         setTasks(data);
       }
     } catch (error) {
       console.error();
-      setError("There was an error trying to load the tasks. Try again later.");
+      setError("Hubo un error tratando de cargar las tareas. Intentelo nuevamente mas tarde.");
     }
   };
   return (

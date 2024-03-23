@@ -15,7 +15,7 @@ export const createTaskAPI = async (task) => {
   }
 };
 
-export const readTaskAPI = async () => {
+export const readTasksAPI = async () => {
   try {
     const answer = await fetch(URITasks);
     return answer;

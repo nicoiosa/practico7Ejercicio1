@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import ListTask from "./ListTask";
 import { createTaskAPI } from "../helpers/queries";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const TaskForm = (edit) => {
   const {
@@ -11,47 +11,38 @@ const TaskForm = (edit) => {
     formState: { errors },
     reset,
   } = useForm();
-  // const [task, setTask] = useState("");
-  // const [taskArray, setTaskArray] = useState(
-  //   JSON.parse(localStorage.getItem("taskArray")) || []
-  // );
-  // useEffect(() => {
-  //   localStorage.setItem("taskArray", JSON.stringify(taskArray));
-  // }, [taskArray]);
-  // const dltTask = (index) => {
-  //   const filteredArray = taskArray.filter((_, i) => i !== index);
-  //   setTaskArray(filteredArray);
-  // };
+  const [reload, setReload] = useState(false);
   const onSubmit = async (task) => {
     const answer = await createTaskAPI(task);
+    setReload(!reload);
     reset();
   };
   return (
     <section>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3 d-flex gap-1" controlId="input">
+      <Form className="mb-3" onSubmit={handleSubmit(onSubmit)}>
+        <Form.Group className="d-flex gap-1 mb-1" controlId="input">
           <Form.Control
             type="text"
             placeholder="Ej; Tarea 1"
             {...register("task", {
-              required: "You didnt write your task yet",
+              required: "No escribiste la tarea todavia!",
               minLength: {
                 value: 2,
-                message: "Has to have at least 2 characters",
+                message: "Debe tener por lo menos 20 caracteres",
               },
               maxLength: {
                 value: 100,
-                message: "Has to have at most 100 characters",
+                message: "Debe tener como maximo 100 caracteres",
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.task?.message}</Form.Text>
           <Button className="btn" type="submit">
             Agregar
           </Button>
         </Form.Group>
+        <Form.Text className="text-danger">{errors.task?.message}</Form.Text>
       </Form>
-      <ListTask />
+      <ListTask reload={reload} />
     </section>
   );
 };
