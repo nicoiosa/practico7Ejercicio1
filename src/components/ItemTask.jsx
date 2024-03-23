@@ -29,8 +29,8 @@ const ItemTask = ({ task, setTasks }) => {
           }
         } else {
           Swal.fire({
-            title: "A mistake occurred!",
-            text: `The task was not deleted succesfully, try again in a few minutes`,
+            title: "Ocurrio un error!",
+            text: `La tarea no fue borrada correctamente. Intente de nuevo mas tarde`,
             icon: "error",
           });
         }
