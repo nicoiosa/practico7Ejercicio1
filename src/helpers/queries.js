@@ -1,4 +1,4 @@
-const URITasks = import.meta.env.VITE_API_RECIPE;
+const URITasks = import.meta.env.VITE_API_TASK;
 
 export const createTaskAPI = async (task) => {
   try {
