@@ -40,7 +40,7 @@ To get started with the Rolling Task List on your local machine, follow these st
 
 ## Contributing
 
-If you have a delicious recipe to share, feel free to contribute to the Rolling Food blog! Follow these steps:
+If you have a delicious recipe to share, feel free to contribute to the Rolling Task List! Follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or recipe: `git checkout -b feature/your-recipe-name`.
